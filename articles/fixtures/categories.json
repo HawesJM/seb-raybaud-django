@@ -1,0 +1,90 @@
+[
+  {
+    "pk": 1,
+    "model": "articles.category",
+    "fields": {
+      "name": "music",
+      "friendly_name": "Music"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "articles.category",
+    "fields": {
+      "name": "videogames",
+      "friendly_name": "Videogames"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "articles.category",
+    "fields": {
+      "name": "politics",
+      "friendly_name": "Politics"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "articles.category",
+    "fields": {
+      "name": "movies_cinema",
+      "friendly_name": "Movies & Cinema"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "articles.category",
+    "fields": {
+      "name": "business_economics",
+      "friendly_name": "Business & Economics"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "articles.category",
+    "fields": {
+      "name": "art_photography",
+      "friendly_name": "Art & Photography"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "articles.category",
+    "fields": {
+      "name": "sports",
+      "friendly_name": "Sports"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "articles.category",
+    "fields": {
+      "name": "culture",
+      "friendly_name": "Culture"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "articles.category",
+    "fields": {
+      "name": "nightlife",
+      "friendly_name": "Nightlife"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "articles.category",
+    "fields": {
+      "name": "technology",
+      "friendly_name": "technology"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "articles.category",
+    "fields": {
+      "name": "travel",
+      "friendly_name": "Travel"
+    }
+  }
+]
