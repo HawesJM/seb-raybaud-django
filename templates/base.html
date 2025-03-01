@@ -70,9 +70,9 @@
                         <div id="account-dropdown" class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a href="{% url 'add_article' %}" class="dropdown-item">Article Management</a>
+                            <a href="" class="dropdown-item">Article Management</a>
                             {% endif %}
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                            <a href="" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -82,7 +82,7 @@
                     </li>
                     {% if request.user.is_superuser %}
                     <li class="list-inline-item">
-                        <a class="" href="{% url 'view_library' %}">
+                        <a class="" href="">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-book"></i></div>
                                 <p>Library</p>

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Article, Category, Publication
 
+
 class ArticleAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -13,6 +14,7 @@ class ArticleAdmin(admin.ModelAdmin):
         'publication',
     )
     ordering = ('published_date',)
+
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Category)
