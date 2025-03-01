@@ -1,41 +1,123 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
 
+<head>
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     {% endblock %}
 
     {% block extra_meta %}
     {% endblock %}
 
-    {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% block core_css %}
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quintessential&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
-    {% block corejs %}
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    {% block core_js %}
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     {% endblock %}
 
     {% block extra_js %}
     {% endblock %}
 
-    <title>Boutique Ado {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
-    <header class="container-fluid fixed-top"></header>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <title>Seb Raybaud {% block extra_title %}{% endblock %}</title>
+</head>
+
+<body>
+    <!-- main header and navbar -->
+    <div id="title-header" class="container-fluid fixed-top nav-bar-one">
+        <div id="" class="row d-none d-lg-flex">
+            <div class="col-12 col-lg-12 my-auto mx-auto py-1 py-lg-0 text-center">
+                <a id="navbar-brand" href="{% url 'home' %}"> <br> Sebastien Raybaud <br> Journalism <br>
+                    <i class="fa-regular fa-newspaper"></i>
+                </a>
+            </div>
+            <!-- User Options In Main Navigation -->
+            <div class="col-12 col-lg-12 my-auto py-1 py-lg-0 d-flex flex-row-reverse">
+                <ul class="list-inline list-unstyled my-0 ml-auto">
+                    {% if request.user.is_superuser %}
+                    <li class="list-inline-item dropdown">
+                        <a class="nav-link" href="#" id="user-options" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-3">My Account</p>
+                            </div>
+                        </a>
+                        {% endif %}
+                        <div id="account-dropdown" class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a href="{% url 'add_article' %}" class="dropdown-item">Article Management</a>
+                            {% endif %}
+                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    {% if request.user.is_superuser %}
+                    <li class="list-inline-item">
+                        <a class="" href="{% url 'view_library' %}">
+                            <div class="text-center">
+                                <div><i class="fa-solid fa-book"></i></div>
+                                <p>Library</p>
+                            </div>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
+        </div>
+        <div class="row nav-bar-one">
+            <nav class="navbar navbar-expand-lg w-100">
+                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span id="toggler-icon" class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/main-nav.html' %}
+                {% include 'includes/mobile-top-header.html' %}
+            </nav>
+        </div>
+    </div>
 
     {% if messages %}
-        <div class="message-container"></div>
+    <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
     {% endif %}
 
     {% block page_header %}
@@ -44,9 +126,58 @@
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
+    <!--footer -->
+    <div id="footer" class="col-12 fixed-bottom">
+        <footer class="d-flex flex-wrap py-3 my-4">
+            <div class="col-md-4 footer-left">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0">© 2025 Sebastien Raybaud</span>
+            </div>
+            <div class="col-md-4">
+                <a href="https://www.facebook.com/" class="me-4 footer-links text-white">
+                    <i id="facebook-link" class="fab fa-facebook-f"></i>
+                    <span class="sr-only">Facebook Link</span>
+                </a>
+                <a href="https://twitter.com/" class="me-4 footer-links text-white">
+                    <i id="twitter-link" class="fab fa-twitter"></i>
+                    <span class="sr-only">Twitter Link</span>
+                </a>
+                <a href="https://www.google.com/" class="me-4 footer-links text-white">
+                    <i id="google-link" class="fab fa-google"></i>
+                    <span class="sr-only">Google Link</span>
+                </a>
+                <a href="https://www.instagram.com/aaina_b/" class="me-4 footer-links text-white">
+                    <i id="instagram-link" class="fab fa-instagram"></i>
+                    <span class="sr-only">Instagram Link</span>
+                </a>
+                <a href="https://www.linkedin.com/in/aainabhargava89/" class="me-4 footer-links text-white">
+                    <i id="linkedin-link" class="fab fa-linkedin"></i>
+                    <span class="sr-only">Linkedin Link</span>
+                </a>
+                <a href="https://github.com/" class="me-4 footer-links text-white">
+                    <i id="github-link" class="fab fa-github"></i>
+                    <span class="sr-only">Github Link</span>
+                </a>
+            </div>
+            <div class="col-md-4 contact-button footer-right">
+                <a class="btn btn-primary">
+                    Get in touch
+                </a>
+            </div>
+        </footer>
+    </div>
 
-    
-  </body>
+
+    {% block postloadjs %}
+    <script type="text/javascript">
+        $(document).ready(function(){  $('.toast').toast('show');
+    })
+    </script>
+    {% endblock %}
+</body>
+
 </html>
