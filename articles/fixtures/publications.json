@@ -3,8 +3,32 @@
         "pk": 1,
         "model": "articles.publication",
         "fields": {
+            "name": "zolima",
+            "friendly_name": "Zolima Citymag"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "articles.publication",
+        "fields": {
             "name": "radii",
             "friendly_name": "RADII"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "articles.publication",
+        "fields": {
+            "name": "thevalue",
+            "friendly_name": "The Value"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "articles.publication",
+        "fields": {
+            "name": "youngpost",
+            "friendly_name": "YP (youngpost) - SCMP"
         }
     }
 ]

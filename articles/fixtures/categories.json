@@ -86,5 +86,21 @@
       "name": "travel",
       "friendly_name": "Travel"
     }
+  },
+  {
+    "pk": 12,
+    "model": "articles.category",
+    "fields": {
+      "name": "history",
+      "friendly_name": "History"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "articles.category",
+    "fields": {
+      "name": "fashion",
+      "friendly_name": "Fashion"
+    }
   }
 ]

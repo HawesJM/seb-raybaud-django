@@ -52,7 +52,7 @@
             <div class="col-12 col-md-6 order-md-first">
                 <p class="text-muted mt-3 text-center text-md-left">
                     {% if search_term or current_categories != 'None_None' %}
-                        <span class="small"><a href="">All Articles</a> | </span>
+                        <span class="small"><a href="{% url 'articles' %}">All Articles</a> | </span>
                         <span class="small"><a href="">By Publication</a> | </span>
                         <span class="small"><a href="">By Category</a> | </span>
                     {% endif %}
