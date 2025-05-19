@@ -53,8 +53,8 @@
                 <p class="text-muted mt-3 text-center text-md-left">
                     {% if search_term or current_categories != 'None_None' %}
                         <span class="small"><a href="{% url 'articles' %}">All Articles</a> | </span>
-                        <span class="small"><a href="">By Publication</a> | </span>
-                        <span class="small"><a href="">By Category</a> | </span>
+                        <span class="small"><a href="{% url 'articles' %}?publication=zolima,radii,thevalue,youngpost">By Publication</a> | </span>
+                        <span class="small"><a href="{% url 'articles' %}?category=music,videogames,current_affairs,movies_cinema,business_economics,art_photography,sports,culture,nightlife,technology,travel,history,fashion">By Category</a> | </span>
                     {% endif %}
                     {{ articles|length }} Articles On Page{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                 </p>
@@ -152,4 +152,6 @@
 			window.scrollTo(0,0)
 		})
 	</script>
+
+    
 {% endblock %}

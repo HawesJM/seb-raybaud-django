@@ -19,8 +19,8 @@
     "pk": 3,
     "model": "articles.category",
     "fields": {
-      "name": "politics",
-      "friendly_name": "Politics"
+      "name": "current_affairs",
+      "friendly_name": "Current Affairs"
     }
   },
   {
@@ -76,7 +76,7 @@
     "model": "articles.category",
     "fields": {
       "name": "technology",
-      "friendly_name": "technology"
+      "friendly_name": "Technology"
     }
   },
   {

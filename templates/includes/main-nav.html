@@ -16,8 +16,8 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-articles-link">
                 <a href="{% url 'articles' %}?sort=published_date&direction=desc" class="dropdown-item">All Articles</a>
-                <a href="">By Publication</a>
-                <a href="?category=music,videogames,politics,movies_cinema,business_economics,art_photography,sports,culture,nightlife,technology,travel,history,fashion"" class="dropdown-item">By Category</a>
+                <a href="{% url 'articles' %}?publication=zolima,radii,thevalue,youngpost" class="dropdown-item">By Publication</a>
+                <a href="{% url 'articles' %}?category=music,videogames,current_affairs,movies_cinema,business_economics,art_photography,sports,culture,nightlife,technology,travel,history,fashion" class="dropdown-item">By Category</a>
                 
             </div>
         </li>
