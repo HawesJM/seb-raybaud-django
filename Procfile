@@ -1,1 +1,1 @@
-web: gunicorn seb-raybaud-django.wsgi:application
+web: gunicorn seb_raybaud_django.wsgi:application
