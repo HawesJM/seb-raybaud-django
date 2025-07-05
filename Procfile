@@ -1,0 +1,1 @@
+web: gunicorn seb-raybaud-django.wsgi:application
