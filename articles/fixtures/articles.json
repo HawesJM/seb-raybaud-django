@@ -587,7 +587,22 @@
         "published_date": "2025-06-18",
         "publication": 1
       }
+    },
+    {
+      "pk": 43,
+      "model": "articles.article",
+      "fields": {
+        "category": 6,
+        "name": "Who is Behind the Tiny Figures Hiding in Hong Kong’s Streets?",
+        "keywords": "Events | Art | Design",
+        "image_url": "",
+        "image": "isaac-cordal-cover.png",
+        "url": "https://zolimacitymag.com/isaac-cordal-tiny-figures-hiding-hong-kong/",
+        "published_date": "2025-07-09",
+        "publication": 1
+      }
     }
+
 
     
 ]

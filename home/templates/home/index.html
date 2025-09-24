@@ -14,20 +14,20 @@
 <section class="vh-100">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-12 col-xl-4">
+        <div class="col-md-12 col-xl-6">
   
-          <div class="card" style="border-radius: 15px;">
+          <div class="card" id="profile-card" style="border-radius: 15px;">
             <div class="card-body text-center">
               <div class="mt-3 mb-4">
-                <img src="media\profile-picture.jpeg"
+                <img src="{{ MEDIA_URL }}profile-picture.jpeg"
                   class="rounded-circle img-fluid" style="width: 100px;" />
               </div>
               <h4 class="mb-2">Sebastien Raybaud</h4>
-              <p class="text-muted mb-4">Journalist <span class="mx-2">|</span> <a
-                  href="#!">https://zolimacitymag.com/author/sebastien-raybaud/</a>
+              <p id="profile-card-header" class="text-muted mb-4">Journalist <span class="mx-2">|</span> <a
+                  href="https://zolimacitymag.com/author/sebastien-raybaud">https://zolimacitymag.com/author/sebastien-raybaud/</a>
                 </p>
                 <br>
-                <p>
+                <p id="profile-card-text">
                   Hello there, welcome to my website! With degrees in history and museum studies, I am deeply passionate about arts and culture in general – whether it's the latest museum exhibition or an urban-related show from an emerging artist.   
 
 With this curious nature, and as a mixed race individual, I am eager to discover more from both sides of the East and West coin. Through these findings, I hope to inspire you — the reader — to learn more one article at a time about the world around us and more specifically, the beauty of Hong Kong itself.
@@ -50,20 +50,6 @@ If interested, please do not hesitate to contact me for more information and we 
               <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-lg">
                 Message now
               </button>
-              <div class="d-flex justify-content-between text-center mt-5 mb-2">
-                <div>
-                  <p class="mb-2 h5">8471</p>
-                  <p class="text-muted mb-0">Wallets Balance</p>
-                </div>
-                <div class="px-3">
-                  <p class="mb-2 h5">8512</p>
-                  <p class="text-muted mb-0">Income amounts</p>
-                </div>
-                <div>
-                  <p class="mb-2 h5">4751</p>
-                  <p class="text-muted mb-0">Total Transactions</p>
-                </div>
-              </div>
             </div>
           </div>
   

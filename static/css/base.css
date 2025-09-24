@@ -340,3 +340,9 @@ body {
           height: calc(100vh - 116px);
       }
   }
+
+@media (max-width: 991px) {
+  #profile-card-text {
+    font-size: 10px;
+  }
+}

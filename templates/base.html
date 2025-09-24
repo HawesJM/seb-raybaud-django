@@ -24,7 +24,7 @@
         rel="stylesheet">
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css\base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -54,7 +54,7 @@
             </div>
             <div class="col-4 my-auto text-center">
                 <a id="navbar-brand" href="{% url 'home' %}"> <br> Sebastien Raybaud <br> Journalism & Copywrighting <br>
-                    <img id="nav-logo" src="\media\seb-raybaud-logo.png">
+                    <img id="nav-logo" src="{{ MEDIA_URL}}seb-raybaud-logo.png">
                 </a>
             </div>
             <!-- User Options In Main Navigation -->
