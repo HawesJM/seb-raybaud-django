@@ -6,6 +6,10 @@ body {
     margin-bottom: 150px;
   }
   
+.hidden {
+  display: none;
+}
+  
   h1 {
     font-family: "Alegreya Sans", sans-serif
   }
@@ -345,6 +349,11 @@ body {
       .header-container {
           padding-top: 164px;
       }
+
+      #mobile-featured-in {
+        display: none;
+      }
+      */
   }
   
   /* pad the top a bit when navbar is collapsed on mobile */
@@ -360,6 +369,9 @@ body {
 
 @media (max-width: 991px) {
   #profile-card-text {
-    font-size: 10px;
+    font-size: 18px;
+  }
+  #featured-in-carousel, #featured-in-header {
+    display: none;
   }
 }

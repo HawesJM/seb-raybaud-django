@@ -31,6 +31,7 @@
     {% endblock %}
 
     {% block core_js %}
+    
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
         integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -43,6 +44,8 @@
 
     <link rel="icon" type="image/x-icon" href="media/favicon.ico" />
     <title>Seb Raybaud {% block extra_title %}{% endblock %}</title>
+
+    <script src="{% static 'js\script.js' %}"></script>
 </head>
 
 <body>
@@ -135,43 +138,18 @@
     {% endblock %}
 
     <!--footer -->
-    <div id="footer" class="col-12 fixed-bottom">
+    <div id="footer" class="row fixed-bottom">
         <footer class="d-flex flex-wrap py-3 my-4">
-            <div class="col-md-4 footer-left">
-                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                    <svg class="bi" width="30" height="24">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                </a>
-                <span class="mb-3 mb-md-0">© 2025 Sebastien Raybaud</span>
+            <div class="col-sm-4 footer-left">
+                <span class="mb-3 ms-5 mb-md-0">© 2025 Sebastien Raybaud</span>
             </div>
-            <div class="col-md-4">
-                <a href="https://www.facebook.com/" class="me-4 footer-links text-white">
-                    <i id="facebook-link" class="fab fa-facebook-f"></i>
-                    <span class="sr-only">Facebook Link</span>
-                </a>
-                <a href="https://twitter.com/" class="me-4 footer-links text-white">
-                    <i id="twitter-link" class="fab fa-twitter"></i>
-                    <span class="sr-only">Twitter Link</span>
-                </a>
-                <a href="https://www.google.com/" class="me-4 footer-links text-white">
-                    <i id="google-link" class="fab fa-google"></i>
-                    <span class="sr-only">Google Link</span>
-                </a>
-                <a href="https://www.instagram.com/aaina_b/" class="me-4 footer-links text-white">
-                    <i id="instagram-link" class="fab fa-instagram"></i>
-                    <span class="sr-only">Instagram Link</span>
-                </a>
+            <div class="col-sm-4">
                 <a href="https://www.linkedin.com/in/aainabhargava89/" class="me-4 footer-links text-white">
-                    <i id="linkedin-link" class="fab fa-linkedin"></i>
+                    <i id="linkedin-link" class="fab fa-linkedin fa-2x"></i>
                     <span class="sr-only">Linkedin Link</span>
                 </a>
-                <a href="https://github.com/" class="me-4 footer-links text-white">
-                    <i id="github-link" class="fab fa-github"></i>
-                    <span class="sr-only">Github Link</span>
-                </a>
             </div>
-            <div class="col-md-4 contact-button footer-right">
+            <div class="col-sm-4 contact-button footer-right">
                 <a class="btn btn-primary">
                     Get in touch
                 </a>
