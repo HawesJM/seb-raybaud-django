@@ -14,7 +14,10 @@ body {
     font-family: "Alegreya Sans", sans-serif;
   }
 
-  
+  h5 {
+    font-family: "Alegreya Sans", sans-serif;
+    font-size: 42px; 
+  }
   #publications-list {
     font-family: "Alegreya Sans", sans-serif
   }
@@ -305,7 +308,21 @@ body {
     text-align: center;
     display: block;
   }
+
+  .logo-div {
+    margin: 20px;
+  }
   
+.carousel-control-prev, .carousel-control-next {
+  color:#7EC48E;
+  font-size: 36px;
+}
+
+.carousel-control-prev :hover {
+  font-size: 60px;
+  color:#7EC48E;
+}
+
   /* -------------------------------- Media Queries */
   
   /* Slightly larger container on xl screens */
