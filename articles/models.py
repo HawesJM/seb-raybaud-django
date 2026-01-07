@@ -38,6 +38,7 @@ class Article(models.Model):
     url = models.URLField(max_length=1024, null=True, blank=True)
     published_date = models.CharField(max_length=1024, null=True, blank=True)
     publication = models.ForeignKey('publication', null=True, blank=True, on_delete=models.SET_NULL)
+    content = models.CharField(max_length=50000, null=True, blank=True)
 
     def __str__(self):
         return self.name

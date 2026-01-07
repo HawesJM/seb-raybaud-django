@@ -176,18 +176,6 @@ body {
   }
   
   
-  #footer {
-    height: 100px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #7EC48E;
-    color: #112A46;
-    text-align: center;
-    font-family: "Alegreya Sans", sans-serif;
-  }
-  
   #footer-two {
     position: fixed;
     left: 0;
@@ -327,12 +315,24 @@ body {
   color:#7EC48E;
 }
 
+#footer-container {
+  margin: none;
+  padding: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #7EC48E !important;
+  color: #112A46;
+  text-align: center;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
   /* -------------------------------- Media Queries */
   
   /* Slightly larger container on xl screens */
   @media (min-width: 1200px) {
     .container {
-      max-width: 80%;
+      max-width: 100%;
     }
   }
   
@@ -353,7 +353,6 @@ body {
       #mobile-featured-in {
         display: none;
       }
-      */
   }
   
   /* pad the top a bit when navbar is collapsed on mobile */
@@ -371,7 +370,7 @@ body {
   #profile-card-text {
     font-size: 18px;
   }
-  #featured-in-carousel, #featured-in-header {
+  #featured-in-carousel, #featured-in-header, #footer-container {
     display: none;
   }
 }

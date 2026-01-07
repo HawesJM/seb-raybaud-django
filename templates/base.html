@@ -137,26 +137,48 @@
     {% block content %}
     {% endblock %}
 
-    <!--footer -->
-    <div id="footer" class="row fixed-bottom">
-        <footer class="d-flex flex-wrap py-3 my-4">
-            <div class="col-sm-4 footer-left">
-                <span class="mb-3 ms-5 mb-md-0">© 2025 Sebastien Raybaud</span>
-            </div>
-            <div class="col-sm-4">
-                <a href="https://www.linkedin.com/in/aainabhargava89/" class="me-4 footer-links text-white">
-                    <i id="linkedin-link" class="fab fa-linkedin fa-2x"></i>
-                    <span class="sr-only">Linkedin Link</span>
-                </a>
-            </div>
-            <div class="col-sm-4 contact-button footer-right">
-                <a class="btn btn-primary">
-                    Get in touch
-                </a>
-            </div>
-        </footer>
-    </div>
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container row">
+  <!-- Footer -->
+  <footer id="footer-container" class="text-center text-white w-100">
+    <!-- Grid container -->
+    <div id="footer-nav" class="container">
+      <!-- Section: Links -->
+      <section class=>
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center ">
+          <!-- Grid column -->
+          
+        <!-- Grid row-->
+      </section>
+      <!-- Section: Links -->
 
+      <hr class="my-1" />
+
+      <!-- Section: Social -->
+      <section class="text-center">
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </section>
+      <!-- Section: Social -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center"
+         >
+      © 2025 Copyright:
+      <a class="text-white" href=""
+         >Sebastien Raybaud</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
+<!-- End of .container -->
 
     {% block postloadjs %}
     <script type="text/javascript">
