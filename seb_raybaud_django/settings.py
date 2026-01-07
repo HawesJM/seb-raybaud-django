@@ -33,7 +33,7 @@ DEBUG = 'True'
 #for Heroku deployment and non testing DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    'sebastien-raybaud-fc1eea74b515.herokuapp.com',
+    'seb-raybaud-django-ab2eaaa362b7.herokuapp.com',
     '127.0.0.1'
 ]
 
