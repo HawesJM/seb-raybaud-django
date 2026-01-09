@@ -3,36 +3,77 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
+<div class="container header-container" id="header-container-homepage">
 </div>
 {% endblock %}
 
 {% block content %}
-<div class="container col-6 bg-body-tertiary">
-  <div class="col-12 mx-auto-5 text-center">
-    <h1 class="mb-3">Heading</h1>
-    <h4 class="mb-3">Subheading</h4>
-    <a data-mdb-ripple-init class="btn btn-primary" href="" role="button">Call to action</a>
+<div class="container col-6 bg-body-tertiary home-page-card" style="height: 15%;">
+  <div class="p-5 text-center bg-image" style="
+      background-image: url('https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg');
+      height: 400px;
+    ">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3 home-page-card">Seb Raybaud, writer</h1>
+          <a data-mdb-ripple-init class="btn btn-outline-light btn-lg"
+            href="{% url 'articles' %}?sort=published_date&direction=desc" role="button">View my work</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <div class="card bg-body-tertiary col-6">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button type="button" class="btn btn-primary" data-mdb-ripple-init>Button</button>
-  </div>
+  <!-- Background image -->
+  </header>
+  <a>
+    <div class="col-12" id="articles-card">
+      <div class="row mx-auto text-center">
+        <h2>
+          Latest Articles
+        </h2>
+      </div>
+      <a href="{% url 'articles' %}?sort=published_date&direction=desc">
+        <div style="display: flex" class="row bg-body-tertiary">
+          <div class="col-6 flip-card">
+            <div class="card flip-card-inner">
+              <div class="card-body flip-card-front">
+                <img class="card-img-top img-fluid" style="width: 100%" src="{{ MEDIA_URL }}isaac-cordal-cover.png">
+              </div>
+              <div id="flip-card-one-back" class="flip-card-text">      
+      <p class="mx-auto">John Doe</p>
+    </div>
+            </div>
+          </div>
+          <div class="col-6 flip-card">
+          <div class="card flip-card-inner">
+            <div class="card-body flip-card-two-front">
+              <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}isaac-cordal-cover.png">
+            </div>
+            <div id="flip-card-two-back" class="flip-card-text">      
+      <span style="display: block" class="mx-auto flip-card-text-box">John Doe</span>
+    </div>
+          </div>
+          </div>
+        </div>
+      </a>
+      <br>
+      <div class="col-12 mx-auto-5 text-center">
+        <h2 class="mb-3">Personal Content</h1>
+      </div>
+      <div class="row bg-body-tertiary">
+        <div class="card col-6" id="blog-card">
+          <div class="card-body" id="blog-card-body">
+            <h2 class="card-title">Blog</h5>
+          </div>
+        </div>
+        <div class="card col-6" id="projects-card">
+          <div class="card-body">
+            <h2 class="card-title">Happenings</h5>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
-<div class="card bg-body-tertiary col-6">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button type="button" class="btn btn-primary" data-mdb-ripple-init>Button</button>
-  </div>
-</div>
-  </div>
-</div>
+
 
 {% endblock %}

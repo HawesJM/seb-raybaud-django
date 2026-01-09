@@ -5,6 +5,15 @@ body {
     font-family: "Alegreya Sans", sans-serif;
     margin-bottom: 150px;
   }
+
+.home-page-card h1 {
+  padding: 0px;
+  color: white;
+}
+
+#articles-card {
+  padding: 10px;
+}
   
 .hidden {
   display: none;
@@ -89,7 +98,6 @@ body {
     font-weight: bold;
   }
   
-  
   #nav-bar-two {
     text-align: center;
     background-color: #53644f;
@@ -100,9 +108,14 @@ body {
     font-family: "Alegreya Sans", sans-serif;
   }
   
+  #header-container-homepage {
+    padding-bottom: 25px;
+  }
+
   .header-container {
     padding-bottom: 100px;
   }
+  
   
   .nav-link {
     color: #112A46;
@@ -175,6 +188,83 @@ body {
     font-family: "Alegreya Sans";
   }
   
+  .flip-card {
+  position: relative;
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-two-front{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  color: #112A46
+}
+
+/* Style the back side */
+#flip-card-one-back {
+  height: 100%;
+  background-color: #112A46;
+  color: white;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+#flip-card-two-back {
+  height: 100%;
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+#blog-card {
+  height: 250px;
+}
+
+#blog-card:hover {
+  background-color: rgba(126, 196, 142, 0.4);
+}
+
+#projects-card {
+  height: 250px;
+}
+
+#projects-card:hover {
+  background-color: rgba(17, 42, 70, 0.8);
+  color: white;
+}
   
   #footer-two {
     position: fixed;
