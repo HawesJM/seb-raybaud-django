@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'home',
     'articles',
     'about',
+    'blog',
 
     # other
     'storages',
