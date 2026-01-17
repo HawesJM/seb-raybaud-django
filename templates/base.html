@@ -170,7 +170,8 @@
     <div
          class="text-center"
          >
-      © 2025 Copyright:
+         Copyright ©
+      <span id="spanYear"></span>
       <a class="text-white" href=""
          >Sebastien Raybaud</a
         >
@@ -187,6 +188,10 @@
             $('.toast').toast('show');
         })
     </script>
+    <!-- Get current year for copyright statement -->
+<script>
+  $('#spanYear').html(new Date().getFullYear());
+</script>
     {% endblock %}
 </body>
 
