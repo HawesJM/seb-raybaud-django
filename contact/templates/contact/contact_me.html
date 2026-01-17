@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="col-6 mx-auto text-center my-5">
+    <form method="POST" action="{% url 'send_message' %}" class="form">
+        {% csrf_token %}
+        <div class="col-6 mx-auto text-center">
+            <h2>Get in touch</h2>
+            <hr>
+            <input type="text" name="sender_email" placeholder="Your email address" class="form-control my-4" required>
+            <textarea name="message_content" placeholder="Type your message here" class="form-control my-4" maxlength="500" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+</div>
+{% endblock %}
