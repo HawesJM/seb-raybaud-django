@@ -18,30 +18,39 @@
             <div class="col-lg-8">
                 <!-- Featured blog post-->
                 <div class="card mb-4">
-                    <a href="" target="_blank"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg"
+                    {% if latest_post.image_url%}
+                    <a href="" target="_blank"><img class="card-img-top" src="{{ latest_post.image_url }}"
                             alt="..."></a>
+                    {% else %}
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}pexels-markus-winkler-1430818-4057663.png" alt="{{ product.name }}">
+                        </a>
+                            {% endif %}
                     <div class="card-body">
                         <div class="small text-muted">January 1, 2023</div>
                         <h2 class="card-title">{{ latest_post.title }}
                         </h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-                            aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi
-                            vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                        <p class="card-text"></p>
                         <a class="btn btn-primary" href="#!">Read more →</a>
                     </div>
                 </div>
                 <!-- Nested row for non-featured blog posts-->
 
+
                 <div class="row mx-auto">
                     {% for post in posts %}
                     <div class="card col-4 py-2">
-                        <a href="{% url 'post_detail' post.id %}" target="_blank"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg"
+                        <a href="{% url 'post_detail' post.id %}" target="_blank">
+                            {% if post.image_url%}
+                            <img class="card-img-top" src="{{ post.image_url }}"
                                 alt="..."></a>
+                            {% else %}
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}pexels-markus-winkler-1430818-4057663.png" alt="{{ product.name }}">
+                        </a>
+                            {% endif %}
                         <div class="card-body">
                             <div class="small text-muted">January 1, 2023</div>
                             <h2 class="card-title h4">{{ post.title }}</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-                                aliquid atque, nulla.</p>
+                            <p class="card-text preview">{{ post.body }}.</p>
                             <a class="btn btn-primary" href="#!">Read more →</a>
                         </div>
                     </div>
@@ -107,6 +116,16 @@
         window.scrollTo(0, 0)
     })
 </script>
+<script>
+  document.querySelectorAll('.preview').forEach(el => {
+    const words = el.textContent.trim().split(/\s+/);
+
+    if (words.length > 25) {
+      el.textContent = words.slice(0, 25).join(' ') + '…';
+    }
+  });
+</script>
+
 
 
 {% endblock %}

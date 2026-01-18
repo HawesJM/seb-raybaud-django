@@ -417,6 +417,23 @@ body {
   font-family: "Alegreya Sans", sans-serif;
 }
 
+#message-container {
+  background-color: #112A46;
+  color: white;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1100;
+} 
+
+.custom-toast {
+  overflow:visible;
+} 
+
+.toast-capper {
+  height: 2px;
+}
+
   /* -------------------------------- Media Queries */
   
   /* Slightly larger container on xl screens */
