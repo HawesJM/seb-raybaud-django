@@ -19,7 +19,7 @@
                 <!-- Featured blog post-->
                 <div class="card mb-4">
                     {% if latest_post.image_url%}
-                    <a href="" target="_blank"><img class="card-img-top" src="{{ latest_post.image_url }}"
+                    <a href="" target="_blank"><img class="card-img-top" src="{{latest_post.image_url }}"
                             alt="..."></a>
                     {% else %}
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}pexels-markus-winkler-1430818-4057663.png" alt="{{ product.name }}">
