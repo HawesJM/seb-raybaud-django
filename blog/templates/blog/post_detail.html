@@ -13,6 +13,13 @@
 
 <div class="card col-6 mx-auto my-5">
     <h1>{{ post.title }}</h1>
+    <article class="my-4">
+        {% if post.image_url %}
+        <img class="img-fluid blog-image" src="{{ post.image_url }}" alt="...">
+        {% else %}
+        <img class="img-fluid blog-image" src="{{ MEDIA_URL }}pexels-markus-winkler-1430818-4057663.png" alt="{{ product.name }}">
+        {% endif %}
+        <p class="mt-4">{{ post.body|linebreaks }}</p>
 </div>
 
 {% endblock %}

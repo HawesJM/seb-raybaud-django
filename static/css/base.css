@@ -434,6 +434,10 @@ body {
   height: 2px;
 }
 
+.blog-image {
+  max-height: 200px;
+}
+
   /* -------------------------------- Media Queries */
   
   /* Slightly larger container on xl screens */
