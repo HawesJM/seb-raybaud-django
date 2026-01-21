@@ -18,19 +18,18 @@
             <div class="col-lg-8">
                 <!-- Featured blog post-->
                 <div class="card mb-4">
-                    {% if latest_post.image_url%}
-                    <a href="" target="_blank"><img class="card-img-top" src="{{latest_post.image_url }}"
-                            alt="..."></a>
+                    {% if latest_post.image %}
+                    <a href="" target="_blank"><img class="card-img-top" src="{{latest_post.image.url}}" alt="..."></a>
                     {% else %}
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}pexels-markus-winkler-1430818-4057663.png" alt="{{ product.name }}">
-                        </a>
-                            {% endif %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}pexels-markus-winkler-1430818-4057663.png"
+                        alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
                     <div class="card-body">
-                        <div class="small text-muted">January 1, 2023</div>
                         <h2 class="card-title">{{ latest_post.title }}
                         </h2>
+                        <div class="small text-muted">posted on: {{ latest_post.created_on }}</div>
                         <p class="card-text"></p>
-                        <a class="btn btn-primary" href="#!">Read more →</a>
                     </div>
                 </div>
                 <!-- Nested row for non-featured blog posts-->
@@ -40,74 +39,70 @@
                     {% for post in posts %}
                     <div class="card col-4 py-2">
                         <a href="{% url 'post_detail' post.id %}" target="_blank">
-                            {% if post.image_url%}
-                            <img class="card-img-top" src="{{ post.image_url }}"
-                                alt="..."></a>
-                            {% else %}
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}pexels-markus-winkler-1430818-4057663.png" alt="{{ product.name }}">
+                            {% if post.image%}
+                            <img class="card-img-top" src="{{ post.image.url }}" alt="..."></a>
+                        {% else %}
+                        <img class="card-img-top img-fluid"
+                            src="{{ MEDIA_URL }}pexels-markus-winkler-1430818-4057663.png" alt="{{ product.name }}">
                         </a>
-                            {% endif %}
+                        {% endif %}
                         <div class="card-body">
-                            <div class="small text-muted">January 1, 2023</div>
                             <h2 class="card-title h4">{{ post.title }}</h2>
+                            <div class="small text-muted">posted on: {{ post.created_on }}</div>
                             <p class="card-text preview">{{ post.body }}.</p>
                             <a class="btn btn-primary" href="{% url 'post_detail' post.id %}">Read more →</a>
                         </div>
                     </div>
-                    {% endfor %}          
+                    {% endfor %}
                 </div>
 
                 <!-- Pagination-->
                 <div class="mx-auto text-center">
-            <div class="">Pagination</div>
-            <div class="mx-auto text-center">
-            </div>
-        </div>
-
-        
-    </div>
-    <!-- Side widgets-->
-    <div class="col-lg-4">
-        <!-- Search widget-->
-        <div class="card mb-4">
-            <div class="card-header">Search blog posts</div>
-            <div class="card-body">
-                <form method="GET" action="{% url 'all_posts' %}">
-                <div class="input-group">
-                    <input class="form-control" type="text" name="q" placeholder="Enter search term..."
-                        aria-label="Enter search term..." aria-describedby="button-search">
-                    <button class="btn btn-primary" id="button-search" type="submit">Submit</button>
-                </div>
-                </form>
-            </div>
-        </div>
-        <!-- Categories widget-->
-        <div class="card mb-4">
-            <div class="card-header">Topics</div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12">
-                        <ul class="list-unstyled mb-0">
-                            {% for category in categories %}
-                            <li>{{ category.friendly_name }}</li>
-                            {% endfor %}        
-                        </ul>
+                    <div class="">Pagination</div>
+                    <div class="mx-auto text-center">
                     </div>
                 </div>
+
+
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <!-- Search widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Search blog posts</div>
+                    <div class="card-body">
+                        <form method="GET" action="{% url 'all_posts' %}">
+                            <div class="input-group">
+                                <input class="form-control" type="text" name="q" placeholder="Enter search term..."
+                                    aria-label="Enter search term..." aria-describedby="button-search">
+                                <button class="btn btn-primary" id="button-search" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Categories widget-->
+                <div class="card mb-4">
+                    <div class="card-header"><strong>Topics</strong></div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="list-unstyled mb-0">
+                                    {% for category in categories %}
+                                    <li>{{ category.friendly_name }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projects widget-->
+                <div class="card mb-4 mx-auto text-center">
+                    <div class="card-header mx-auto text-center"><strong>Current Projects</strong></div>
+                    <img class="mx-auto" src="{{ MEDIA_URL }}neon-not-dead.png" style="max-height: 500px; max-width: 50%;">
+                </div>
             </div>
         </div>
-        <!-- Side widget-->
-        <div class="card mb-4">
-            
-            <div class="card-header">Side Widget</div>
-            {% for article in articles %}
-            <div class="">{{ article.article_name }}</div>
-            {% endfor %}
-
-        </div>
     </div>
-</div>
-</div>
 </div>
 {% endblock %}
 
@@ -119,13 +114,13 @@
     })
 </script>
 <script>
-  document.querySelectorAll('.preview').forEach(el => {
-    const words = el.textContent.trim().split(/\s+/);
+    document.querySelectorAll('.preview').forEach(el => {
+        const words = el.textContent.trim().split(/\s+/);
 
-    if (words.length > 25) {
-      el.textContent = words.slice(0, 25).join(' ') + '…';
-    }
-  });
+        if (words.length > 25) {
+            el.textContent = words.slice(0, 25).join(' ') + '…';
+        }
+    });
 </script>
 
 

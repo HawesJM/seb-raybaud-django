@@ -19,7 +19,7 @@ class Post(models.Model):
     image = models.ImageField(max_length=1024, null=True, blank=True)
     title = models.CharField(max_length=255)
     body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField("Category", related_name="posts")
 
