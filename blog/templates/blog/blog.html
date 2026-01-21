@@ -51,7 +51,7 @@
                             <div class="small text-muted">January 1, 2023</div>
                             <h2 class="card-title h4">{{ post.title }}</h2>
                             <p class="card-text preview">{{ post.body }}.</p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
+                            <a class="btn btn-primary" href="{% url 'post_detail' post.id %}">Read more →</a>
                         </div>
                     </div>
                     {% endfor %}          
@@ -61,7 +61,6 @@
                 <div class="mx-auto text-center">
             <div class="">Pagination</div>
             <div class="mx-auto text-center">
-                Sausage
             </div>
         </div>
 
@@ -71,7 +70,7 @@
     <div class="col-lg-4">
         <!-- Search widget-->
         <div class="card mb-4">
-            <div class="card-header">Search blogs</div>
+            <div class="card-header">Search blog posts</div>
             <div class="card-body">
                 <form method="GET" action="{% url 'all_posts' %}">
                 <div class="input-group">
@@ -99,9 +98,12 @@
         </div>
         <!-- Side widget-->
         <div class="card mb-4">
+            
             <div class="card-header">Side Widget</div>
-            <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and
-                feature the Bootstrap 5 card component!</div>
+            {% for article in articles %}
+            <div class="">{{ article.article_name }}</div>
+            {% endfor %}
+
         </div>
     </div>
 </div>

@@ -2,7 +2,9 @@ from django.shortcuts import get_object_or_404, render, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from .models import Post, Category
+from articles.models import Article
 # Create your views here.
+
 
 def all_posts(request):
     query = None
@@ -40,3 +42,12 @@ def post_detail(request, post_id):
 
     return render(request, 'blog/post_detail.html', context)
 
+
+def all_articles(request):
+    articles = Article.objects.all().order_by('-published_date')
+    
+    context = {
+        'articles': articles,
+    }
+
+    return render(request, 'blog/blog.html', context)

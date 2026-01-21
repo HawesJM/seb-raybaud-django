@@ -76,6 +76,8 @@ def all_articles(request):
     return render(request, "articles/articles.html", context)
     return render(request, 'core/articles.html', { 'articles': articles })
 
+
+
 @login_required
 def add_article(request):
 
