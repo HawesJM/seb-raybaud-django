@@ -117,6 +117,7 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'seb_raybaud_django.wsgi.application'
 
+
 # Database
 if 'DATABASE_URL' in os.environ:
     DATABASES = {

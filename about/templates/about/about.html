@@ -25,7 +25,8 @@
       </button>
     </div>
     <p id="profile-card-header" class="text-muted mb-4">Journalist <span class="mx-2">|</span> <a
-        href="https://zolimacitymag.com/author/sebastien-raybaud" target="_blank">https://zolimacitymag.com/author/sebastien-raybaud/</a>
+        href="https://zolimacitymag.com/author/sebastien-raybaud"
+        target="_blank">https://zolimacitymag.com/author/sebastien-raybaud/</a>
     </p>
     <p id="profile-card-text">
       Hello there, welcome to my website! With degrees in history and museum studies, I am deeply passionate about arts
@@ -50,22 +51,30 @@
       </div>
       <div class="row">
         <div class="col">
-        <img src="{{ MEDIA_URL }}zolima-logo.svg" style="height: 50px; width:50px;">
+          <img src="{{ MEDIA_URL }}zolima-logo.svg" style="height: 50px; width:50px;">
         </div>
         <div class="col">
-        <img src="{{ MEDIA_URL }}radii-logo.svg" style="height: 50px; width:50px; background-color:black">
+          <img src="{{ MEDIA_URL }}radii-logo.svg" style="height: 50px; width:50px; background-color:black">
         </div>
         <div class="col">
-        <img src="{{ MEDIA_URL }}the-value-logo.svg" style="height: 50px; width:50px;">
+          <img src="{{ MEDIA_URL }}the-value-logo.svg" style="height: 50px; width:50px;">
         </div>
         <div class="col">
-        <img src="{{ MEDIA_URL }}young-post-logo.svg" style="height: 50px; width:50px;">
+          <img src="{{ MEDIA_URL }}young-post-logo.svg" style="height: 50px; width:50px;">
+        </div>
+        <div class="col">
+          <img src="{{ MEDIA_URL }}lrc-logo.svg" style="height: 50px; width:50px;">
+        </div>
+        <div class="col">
+          <img src="{{ MEDIA_URL }}young-post-logo.svg" style="height: 50px; width:50px;">
         </div>
       </div>
     </div>
-    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-lg">
+    <a>
+    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-lg" id="profile-contact-button">
       Get in touch
     </button>
+    </a>
     <br>
   </div>
 </div>
@@ -80,10 +89,17 @@
       <img class="" src="{{ MEDIA_URL }}zolima-logo.png" style="height: 150px;" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="" src="{{ MEDIA_URL }}radii-logo.png" style="height: 150px; background-color: black;" alt="Second slide">
+      <img class="" src="{{ MEDIA_URL }}radii-logo.png" style="height: 150px; background-color: black;"
+        alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="" src="{{ MEDIA_URL }}lrc-logo.png" style="height: 150px;" alt="Third slide">
     </div>
     <div class="carousel-item">
       <img class="" src="{{ MEDIA_URL }}the-value-logo.png" style="height: 150px;" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="" src="{{ MEDIA_URL }}tsz-shan-logo.png" style="height: 150px;" alt="Third slide">
     </div>
     <div class="carousel-item">
       <img class="" src="{{ MEDIA_URL }}young-post-logo.png" style="height: 150px;" alt="Third slide">

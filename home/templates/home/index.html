@@ -17,14 +17,15 @@
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
           <h1 class="mb-3 home-page-card">Seb Raybaud, writer</h1>
-          <a data-mdb-ripple-init class="btn btn-outline-light btn-lg"
-            href="{% url 'articles' %}?sort=published_date&direction=desc" role="button">View my work</a>
+          <a data-mdb-ripple-init class="btn btn-lg" id="home-writing-button"
+            href="{% url 'articles' %}?sort=published_date&direction=desc" role="button">View my published work</a>
         </div>
       </div>
     </div>
   </div>
   <!-- Background image -->
   </header>
+  <hr>
   <a>
     <div class="col-12" id="articles-card">
       <div class="row mx-auto text-center">
@@ -57,18 +58,23 @@
         </div>
       </a>
       <br>
+      <hr>
       <div class="col-12 mx-auto-5 text-center">
         <h2 class="mb-3">Personal Content</h1>
       </div>
       <div class="row bg-body-tertiary">
         <div class="card col-6" id="blog-card">
           <div class="card-body" id="blog-card-body">
-            <h3 class="card-title">Blog</h3>
+            <a href="{% url 'all_posts' %}" class="home-card-links"> 
+            <h3 class="card-title"><i>Blog</i></h3>
+            </a>
           </div>
         </div>
         <div class="card col-6" id="projects-card">
           <div class="card-body">
-            <h3 class="card-title">Happenings</h3>
+            <a href="{% url 'send_message' %}" class="home-card-links">
+            <h3 class="card-title"><i>Projects</i></h3>
+            </a>
           </div>
         </div>
       </div>

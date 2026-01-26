@@ -11,8 +11,31 @@ body {
   color: white;
 }
 
+#home-writing-button {
+  background-color: #FFFBF6;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: bold;
+}
+
+#home-writing-button :hover {
+  background-color: #112A46;
+}
+
+.home-card-links {
+  text-decoration: none;
+  color: inherit;
+}
+
 #articles-card {
   padding: 10px;
+}
+
+#profile-contact-button {
+  background-color:#112A46;
+}
+
+.blog-button {
+  background-color:#112A46;
 }
   
 .hidden {
@@ -436,6 +459,41 @@ body {
 
 .blog-image {
   max-height: 200px;
+}
+
+  /* -------------------------------- Blog Main Article - Latest */
+
+.extra {
+  display: none;
+}
+p {
+  line-height: 2em;
+  display: inline;
+}
+input[type="checkbox"] {
+  height: 2em;
+  display: block;
+  appearance: none;
+}
+label {
+  position: relative;
+  padding: 1em;
+  background-color: #2b8eec;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 0.5em;
+}
+label:before {
+  content: "Read More";
+}
+input[type="checkbox"]:checked ~ label:before {
+  content: "Read Less";
+}
+.dots:has(~ input[type="checkbox"]:checked) {
+  display: none;
+}
+.extra:has(~ input[type="checkbox"]:checked) {
+  display: inline;
 }
 
   /* -------------------------------- Media Queries */
