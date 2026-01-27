@@ -233,11 +233,25 @@
                 </div>
 
                 <!-- Pagination-->
-                <div class="mx-auto text-center">
-                    <div class="">Pagination</div>
-                    <div class="mx-auto text-center">
-                    </div>
-                </div>
+<div class="pagination mx-auto">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page=1&{{ posts.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">&laquo; first</a>
+            <br>
+            <a href="?page={{ posts.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            <strong>Page {{ posts.number }} of {{ posts.paginator.num_pages }}.</strong>
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">next</a>
+            <br>
+            <a href="?page={{ posts.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
 
 
             </div>

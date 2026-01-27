@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Post, Category
 from articles.models import Article
+from django.core.paginator import Paginator
 # Create your views here.
 
 
@@ -21,6 +22,15 @@ def all_posts(request):
             
             queries = Q(title__icontains=query) | Q(body__icontains=query)
             posts = posts.filter(queries)
+    
+    page = request.GET.get('page', 1)
+    paginator = Paginator(posts, 3)
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
 
     context = {
         'posts': posts, 
