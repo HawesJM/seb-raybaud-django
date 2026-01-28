@@ -202,8 +202,8 @@
                             Admiral Zheng He and Southeast Asia,
                             http://books.google.co.uk/books?id=08b6HCoCCaAC&printsec=frontcover&dq=zheng+he&hl=en&sa=X&ei=cai4U8rWJ4mCkwX254CwCg&ved=0CCsQ6AEwAQ#v=onepage&q=zheng%20he&f=false,
                             date of access: 06/07/2014, pages 42 to 57</p>
-                            <input type="checkbox" class="form-check" id="read-more-checkbox">
-                            <label for="read-more-checkbox" class="blog-button"></label>
+                        <input type="checkbox" class="form-check" id="read-more-checkbox">
+                        <label for="read-more-checkbox" class="blog-button"></label>
                     </div>
                 </div>
                 <!-- Nested row for non-featured blog posts-->
@@ -233,25 +233,31 @@
                 </div>
 
                 <!-- Pagination-->
-<div class="pagination mx-auto">
-    <span class="step-links">
-        {% if posts.has_previous %}
-            <a href="?page=1&{{ posts.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">&laquo; first</a>
-            <br>
-            <a href="?page={{ posts.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">previous</a>
-        {% endif %}
+                <div class="pagination mx-auto my-3">
+                    <span class="step-links">
+                        {% if posts.has_previous %}
+                        <a
+                            href="?page=1&{{ posts.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">&laquo;
+                            first</a>
+                        <br>
+                        <a
+                            href="?page={{ posts.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">previous</a>
+                        {% endif %}
 
-        <span class="current">
-            <strong>Page {{ posts.number }} of {{ posts.paginator.num_pages }}.</strong>
-        </span>
+                        <span class="current">
+                            <strong>Page {{ posts.number }} of {{ posts.paginator.num_pages }}.</strong>
+                        </span>
 
-        {% if posts.has_next %}
-            <a href="?page={{ posts.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">next</a>
-            <br>
-            <a href="?page={{ posts.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">last &raquo;</a>
-        {% endif %}
-    </span>
-</div>
+                        {% if posts.has_next %}
+                        <a
+                            href="?page={{ posts.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">next</a>
+                        <br>
+                        <a
+                            href="?page={{ posts.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value|urlencode }}{% endif %}{% endfor %}">last
+                            &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
 
 
             </div>

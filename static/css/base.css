@@ -211,6 +211,11 @@ body {
     font-family: "Alegreya Sans";
   }
   
+  #latest-article-image {
+    height: 300px;
+    object-fit: cover;
+  }
+
   .flip-card {
   position: relative;
   background-color: transparent;
@@ -396,7 +401,7 @@ body {
     object-fit: contain;
     margin-top: 10px;
   }
-  
+
   .btt-button {
     height: 42px;
     width: 42px;

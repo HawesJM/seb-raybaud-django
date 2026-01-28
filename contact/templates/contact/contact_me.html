@@ -14,10 +14,11 @@
     <form method="POST" action="{% url 'send_message' %}" class="form">
         {% csrf_token %}
         <div class="col-6 mx-auto text-center">
-            <h2>Get in touch</h2>
+            <h2>Feel free to reach out</h2>
+            <small><i>include your name and thoughts below and I'll get back to you</i></small>
             <hr>
             <input type="text" name="sender_email" placeholder="Your email address" class="form-control my-4" required>
-            <textarea name="message_content" placeholder="Type your message here" class="form-control my-4" maxlength="500" required></textarea>
+            <textarea rows="10" name="message_content" placeholder="Type your message here" class="form-control my-4" maxlength="500" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary blog-button">Send Message</button>
     </form>

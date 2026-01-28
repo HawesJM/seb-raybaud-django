@@ -27,12 +27,22 @@
   </header>
   <hr>
   <a>
-    <div class="col-12" id="articles-card">
+<div class="col-12" id="articles-card">
       <div class="row mx-auto text-center">
         <h2>
           Latest Articles
         </h2>
       </div>
+      <div class="row">
+<div class="bg-image hover-zoom col-6">
+  <img id="latest-article-image" src="{{ MEDIA_URL }}isaac-cordal-cover.png" class="w-100 h-75" />
+</div>
+<div class="bg-image hover-zoom col-6">
+  <img id="second-article-image" src="{{ MEDIA_URL }}culture-and-community-cover.png" class="w-100 h-75" />
+</div>
+</div>
+     
+
       <a href="{% url 'articles' %}?sort=published_date&direction=desc">
         <div style="display: flex" class="row bg-body-tertiary">
           <div class="col-6 flip-card">
