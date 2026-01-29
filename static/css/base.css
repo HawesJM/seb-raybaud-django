@@ -402,6 +402,18 @@ body {
     margin-top: 10px;
   }
 
+  .bg-image {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .centered {
+    position: absolute;
+    top: 35%;
+    left: 15%;
+}
+
   .btt-button {
     height: 42px;
     width: 42px;
@@ -409,7 +421,14 @@ body {
     bottom: 100px;
     right: 10px;
   }
+
+  .centered span {
+    font-size: 18px;
+    font-weight: bolder;
+    text-shadow: 5px 5px 10px #f7f6f6;
+  }
   
+   
   .btt-link {
     cursor: pointer;
   }

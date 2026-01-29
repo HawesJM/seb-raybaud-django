@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container col-6 bg-body-tertiary home-page-card" style="height: 15%;">
   <div class="p-5 text-center bg-image" style="
       background-image: url('https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg');
@@ -23,72 +24,57 @@
       </div>
     </div>
   </div>
-  <!-- Background image -->
+  
+
   </header>
   <hr>
   <a>
-<div class="col-12" id="articles-card">
+    <div class="col-12" id="articles-card">
       <div class="row mx-auto text-center">
         <h2>
           Latest Articles
         </h2>
       </div>
       <div class="row">
-<div class="bg-image hover-zoom col-6">
-  <img id="latest-article-image" src="{{ MEDIA_URL }}isaac-cordal-cover.png" class="w-100 h-75" />
-</div>
-<div class="bg-image hover-zoom col-6">
-  <img id="second-article-image" src="{{ MEDIA_URL }}culture-and-community-cover.png" class="w-100 h-75" />
-</div>
-</div>
-     
-
-      <a href="{% url 'articles' %}?sort=published_date&direction=desc">
-        <div style="display: flex" class="row bg-body-tertiary">
-          <div class="col-6 flip-card">
-            <div class="card flip-card-inner">
-              <div class="card-body flip-card-front">
-                <img class="card-img-top img-fluid" style="width: 100%" src="{{ MEDIA_URL }}isaac-cordal-cover.png">
-              </div>
-              <div id="flip-card-one-back" class="flip-card-text">      
-      <p class="mx-auto">"Who is Behind the Tiny Figures Hiding in Hong Kong’s Streets?"</p>
-    </div>
-            </div>
-          </div>
-          <div class="col-6 flip-card">
-          <div class="card flip-card-inner">
-            <div class="card-body flip-card-two-front">
-              <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}culture-and-community-cover.png">
-            </div>
-            <div id="flip-card-two-back" class="flip-card-text">      
-      <p class="mx-auto flip-card-text-box">"Hong Kong's Centre For Refugees: Culture and Community"</p>
-    </div>
-          </div>
+        <div class="bg-image hover-zoom col-6">
+          <a href="{% url 'articles' %}?sort=published_date&direction=desc">
+            <img id="latest-article-image" src="{{ latest_article.image.url }}" class="w-100 h-75 latest-image" />
+          </a>
+          <div class="centered">
+            <span>"{{ latest_article.name }}"</span>
           </div>
         </div>
+  </a>
+  <div class="bg-image hover-zoom col-6">
+    <a href="{% url 'articles' %}?sort=published_date&direction=desc">
+      <img id="second-article-image" src="{{ penultimate_article.image.url }}" class="w-100 h-75" />
+    </a>
+    <div Class="centered">
+      <span>"{{ penultimate_article.name }}"</span>
+    </div>
+  </div>
+</div>
+<hr class="my-0 py-0">
+<div class="col-12 mx-auto text-center">
+  <h2 class="mb-3">Personal Content</h1>
+</div>
+<div class="row bg-body-tertiary">
+  <div class="card col-6" id="blog-card">
+    <div class="card-body" id="blog-card-body">
+      <a href="{% url 'all_posts' %}" class="home-card-links">
+        <h3 class="card-title"><i>Blog</i></h3>
       </a>
-      <br>
-      <hr>
-      <div class="col-12 mx-auto-5 text-center">
-        <h2 class="mb-3">Personal Content</h1>
-      </div>
-      <div class="row bg-body-tertiary">
-        <div class="card col-6" id="blog-card">
-          <div class="card-body" id="blog-card-body">
-            <a href="{% url 'all_posts' %}" class="home-card-links"> 
-            <h3 class="card-title"><i>Blog</i></h3>
-            </a>
-          </div>
-        </div>
-        <div class="card col-6" id="projects-card">
-          <div class="card-body">
-            <a href="{% url 'send_message' %}" class="home-card-links">
-            <h3 class="card-title"><i>Projects</i></h3>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
+  </div>
+  <div class="card col-6" id="projects-card">
+    <div class="card-body">
+      <a href="{% url 'send_message' %}" class="home-card-links">
+        <h3 class="card-title"><i>Projects</i></h3>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 
 
