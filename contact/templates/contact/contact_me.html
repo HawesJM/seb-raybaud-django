@@ -10,10 +10,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="col-6 mx-auto text-center my-5">
+<div class="mx-auto text-center">
+    <img class="text-center"id="contact-mobile-logo-image" src="{{ MEDIA_URL}}sr-logo-blank-bg.png">
+</div>
+<div class="container">
+<div class="col-xs-12 col-lg-6 mx-auto text-center my-5">
     <form method="POST" action="{% url 'send_message' %}" class="form">
         {% csrf_token %}
-        <div class="col-6 mx-auto text-center">
+        <div class="col-xs-12 col-lg-6 mx-auto text-center">
             <h2>Feel free to reach out</h2>
             <small><i>include your name and thoughts below and I'll get back to you</i></small>
             <hr>
@@ -22,5 +26,6 @@
         </div>
         <button type="submit" class="btn btn-primary blog-button">Send Message</button>
     </form>
+</div>
 </div>
 {% endblock %}

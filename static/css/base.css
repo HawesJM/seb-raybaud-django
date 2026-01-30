@@ -520,6 +520,15 @@ input[type="checkbox"]:checked ~ label:before {
   display: inline;
 }
 
+#mobile-home-image {
+  max-height: 500px;
+}
+
+#mobile-logo-image {
+  height: 25%;
+  Width: 25%;
+}
+
   /* -------------------------------- Media Queries */
   
   /* Slightly larger container on xl screens */
@@ -546,6 +555,14 @@ input[type="checkbox"]:checked ~ label:before {
       #mobile-featured-in {
         display: none;
       }
+
+      #mobile-home-card {
+        display: none;
+      }
+
+      #contact-mobile-logo-image {
+        display: none;
+      }
   }
   
   /* pad the top a bit when navbar is collapsed on mobile */
@@ -566,4 +583,28 @@ input[type="checkbox"]:checked ~ label:before {
   #featured-in-carousel, #featured-in-header, #footer-container {
     display: none;
   }
+  #homepage-card {
+  display: none;
+  }
+
+  #article-searchbar {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .article-title {
+    font-size: 14px;
+  }
+
+  #contact-mobile-logo-image {
+    height: 50%;
+    width: 50%
+  }
+
+  .thumb:hover {
+    transform: scale(2); /* Enlarge on hover */
+    z-index: 10; /* Bring to front */
+    position: relative;
+  }  
+
 }

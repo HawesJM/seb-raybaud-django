@@ -65,7 +65,7 @@
                     <div class="card h-100 border-0 shadow-lg">
                         {% if article.image %}
                         <a target="_blank" href="{{ article.url }}">
-                            <img class="card-img-top img-fluid" src="{{ article.image.url }}" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid thumb" src="{{ article.image.url }}" alt="{{ product.name }}">
                         </a>
                         {% else %}
                         <a href="">
@@ -73,13 +73,14 @@
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
-                            <p class="mb-0">{{ article.name }}</p>
+                            <p class="mb-0 article-title">{{ article.name }}</p>
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
+                                    <span><small class="text-muted">published {{ article.published_date }}</small></span>
+                                    <br>
                                     <p id="card-publication" class="lead mb-0 text-left font-weight-bold"><strong>{{ article.publication.friendly_name }}</strong></p>
-                                    <small class="text-muted">Published {{ article.published_date }}</small>
                                     <br>
                                     <small class="text-muted"><i class="fas fa-circle-info mr-1"></i> {{ article.keywords }}</small>
                                     {% if request.user.is_superuser %}
