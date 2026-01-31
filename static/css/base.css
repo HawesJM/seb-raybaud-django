@@ -529,6 +529,10 @@ input[type="checkbox"]:checked ~ label:before {
   Width: 25%;
 }
 
+.mobile-small {
+  font-size: 12px !important;
+}
+
   /* -------------------------------- Media Queries */
   
   /* Slightly larger container on xl screens */
@@ -563,6 +567,11 @@ input[type="checkbox"]:checked ~ label:before {
       #contact-mobile-logo-image {
         display: none;
       }
+
+      #latest-posts-mobile {
+        display: none;
+      }
+
   }
   
   /* pad the top a bit when navbar is collapsed on mobile */
@@ -586,6 +595,14 @@ input[type="checkbox"]:checked ~ label:before {
   #homepage-card {
   display: none;
   }
+
+  #latest-post-large {
+    display: none;
+  }
+
+  #large-blog-row {
+    display: none;
+  } 
 
   #article-searchbar {
     margin-top: 0;

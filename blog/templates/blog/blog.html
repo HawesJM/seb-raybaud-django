@@ -11,13 +11,28 @@
 
 {% block content %}
 
-<div class="row my-5">
+<div class="row my-5" id="blog-spacer">
     <div class="container col-10">
         <div class="row">
             <!-- Blog entries-->
+             <div id="latest-posts-mobile" class="row mx-auto text-center">
+                {% for post in posts %}
+                <div class="col card">
+                    <img class="img-fluid">
+                     {% if post.image %}
+                    <img class="card-img-top" src="{{latest_post.image.url}}" alt="...">
+                    {% else %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}pexels-markus-winkler-1430818-4057663.png"
+                        alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
+                    <small class="mobile-small">{{post.title}}</small>
+                </div>
+                {% endfor %}
+             </div>
             <div class="col-lg-8">
                 <!-- Featured blog post-->
-                <div class="card mb-4">
+                <div class="card mb-4" id="latest-post-large">
                     {% if latest_post.image %}
                     <img class="card-img-top" src="{{latest_post.image.url}}" alt="...">
                     {% else %}
@@ -209,7 +224,7 @@
                 <!-- Nested row for non-featured blog posts-->
 
 
-                <div class="row mx-auto">
+                <div class="row mx-auto" id="large-blog-row">
                     {% for post in posts %}
                     <div class="card col-4 py-2">
                         <a href="{% url 'post_detail' post.id %}" target="_blank">
