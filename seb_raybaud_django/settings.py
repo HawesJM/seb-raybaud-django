@@ -34,7 +34,8 @@ DEBUG = 'True'
 ALLOWED_HOSTS = [
     'seb-raybaud-django-ab2eaaa362b7.herokuapp.com',
     '127.0.0.1',
-    'www.sebraybaud-writer.com'
+    'www.sebraybaud-writer.com',
+    'sebraybaud-writer.com',
 ]
 
 
