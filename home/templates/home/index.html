@@ -83,28 +83,36 @@
   </div>
   <div class="row my-3">
     <div class="col-xs-12 col-sm-3 card-body bg-body-tertiary">
-      <div class="col btn">
+      <a href="{% url 'articles' %}?sort=published_date&direction=desc">
+      <div id="mobile-published-button" class="col btn">
         Published 
       </div>
+      </a>
     </div>
     <div class="col-xs-12 col-sm-3 card-body bg-body-tertiary">
-      <div class="col btn">
+      <a href="{{latest_article_url}}">
+      <div id="mobile-latest-button" class="col btn">
         Latest 
       </div>
+      </a>
     </div>
     <div class="col-xs-12 col-sm-3 card-body bg-body-tertiary">
-      <div class="col btn">
+      <a href="{% url 'all_posts' %}">
+      <div id="mobile-blog-button" class="col btn">
         Blog posts
       </div>
     </div>
+      </a>
     <div class="col-xs-12 col-sm-3 card-body bg-body-tertiary">
-      <div class="col btn">
+      <a href="{% url 'send_message' %}">
+      <div id="mobile-happenings-button" class="col btn">
         Happenings
       </div>
+      </a>
     </div>
   </div>
   <div class="my-3">
-    <img id="mobile-home-image" class="img-fluid height-50" src="{{ MEDIA_URL }}neon-not-dead.png">
+    <img id="mobile-home-image" class="img-fluid height-50" src="{{ MEDIA_URL }}homepage-background.jpg">
   </div>
   <div>
     <img id="mobile-logo-image" src="{{ MEDIA_URL}}sr-logo-blank-bg.png">

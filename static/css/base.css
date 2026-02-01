@@ -533,6 +533,25 @@ input[type="checkbox"]:checked ~ label:before {
   font-size: 12px !important;
 }
 
+#mobile-published-button {
+  background-color: #112A46;
+  color: white;
+}
+
+#mobile-latest-button {
+  background-color: #7EC48E;
+  color: white;
+}
+
+#mobile-blog-button {
+  background-color: rgb(236, 196, 147);
+  color: white;
+}
+
+#mobile-happenings-button {
+  background-color: #052902;
+  color: white;
+}
   /* -------------------------------- Media Queries */
   
   /* Slightly larger container on xl screens */
