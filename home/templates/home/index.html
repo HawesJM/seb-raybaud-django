@@ -26,37 +26,43 @@
   </div>
 
   </header>
+
   <hr class="my-2">
-  <a>
-    <div class="col-12 my-0" id="articles-card">
-      <div class="row mx-auto text-center">
-        <h2 my-0 py-0>
-          Latest Articles
-        </h2>
-      </div>
-      <div class="row">
-        <div class="bg-image hover-zoom col-6">
-          <a href="{% url 'articles' %}?sort=published_date&direction=desc">
-            <img id="latest-article-image" src="{{ latest_article.image.url }}" class="w-100 h-75 latest-image" />
-          </a>
-          <div class="centered">
-            <span>"{{ latest_article.name }}"</span>
-          </div>
+  <div class="col-12 my-0 h-100" id="articles-card">
+    <div class="row mx-auto text-center">
+      <h2 my-0 py-0>
+        Latest Articles
+      </h2>
+    </div>
+    <div class="row h-100">
+      <div class="bg-image hover-zoom col-6 d-flex justify-content-center align-items-center" style="height: 400px">
+        <div style="max-height: 300px;">
+        <a href="{% url 'articles' %}?sort=published_date&direction=desc">
+          <img id="latest-article-image" src="{{ latest_article.image.url }}" class="w-100 h-100" />
+        </a>
         </div>
-  </a>
-  <div class="bg-image hover-zoom col-6">
-    <a href="{% url 'articles' %}?sort=published_date&direction=desc">
-      <img id="second-article-image" src="{{ penultimate_article.image.url }}" class="w-100 h-75" />
-    </a>
-    <div Class="centered">
-      <span>"{{ penultimate_article.name }}"</span>
+        <div class="centered">
+          <span>"{{ latest_article.name }}"</span>
+        </div>
+      </div>
+      <div class="bg-image hover-zoom col-6 d-flex justify-content-center align-items-center" style="height: 400px">
+        <a href="{% url 'articles' %}?sort=published_date&direction=desc">
+          <div style="max-height: 300px;">
+          <img id="latest-article-image" src="{{ penultimate_article.image.url }}" class="w-100 h-100" />
+          </div>
+        </a>
+        <div class="centered">
+          <span>"{{ penultimate_article.name }}"</span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<hr class="my-0 py-0">
-<br>
-<div class="col-12 mx-auto text-center">
-</div>
+
+<div class="row mx-auto text-center">
+      <h2 style="margin-top: 25px;">
+        Personal Content
+      </h2>
+    </div>
 <div class="row bg-body-tertiary">
   <div class="card col-6" id="blog-card">
     <div class="card-body text-center" id="blog-card-body">
